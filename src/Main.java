@@ -1,14 +1,24 @@
 import exceptions.CantDecomposeException;
 import exceptions.OutOfBoundsException;
+import gui.MainFrame;
 import printer.Printer;
 import printer.PrinterFile;
 import printer.PrinterStdOut;
 import sequence.*;
 
+import javax.swing.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        MainFrame form=new MainFrame();
+        form.setSize(800,600);
+        form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        form.setTitle("Sequences");
+        form.setVisible(true);
+
 
         Printer printerStdOut = new PrinterStdOut();
         Printer printerFile = new PrinterFile("integers.txt");
