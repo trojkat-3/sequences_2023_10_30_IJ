@@ -12,6 +12,16 @@ public class MainFrame extends JFrame {
     private JButton buttonQuit;
     private JButton buttonReset;
     private JButton buttonCredits;
+    private JComboBox comboBox1;
+    private JButton selectButton;
+    private JTextField textField1;
+    private JButton changeButton;
+    private JButton showElementsButton;
+    private JButton saveToFileButton;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JButton decomposeButton;
+    private JButton sumButton;
 
     public MainFrame(){
         super();
