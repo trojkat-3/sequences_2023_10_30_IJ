@@ -70,7 +70,7 @@
                   <text value="Upper limit"/>
                 </properties>
               </component>
-              <component id="c8d9e" class="javax.swing.JLabel">
+              <component id="c8d9e" class="javax.swing.JLabel" binding="LabelMax">
                 <constraints/>
                 <properties>
                   <text value="Label"/>

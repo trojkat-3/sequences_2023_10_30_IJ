@@ -1,5 +1,7 @@
 package gui;
 
+import printer.Printer;
+import printer.PrinterDummy;
 import sequence.*;
 
 import javax.swing.*;
@@ -25,8 +27,10 @@ public class MainFrame extends JFrame {
     private JTextField textField3;
     private JButton decomposeButton;
     private JButton sumButton;
+    private JLabel LabelMax;
 
-    private Sequence currentSq=null;
+    private Sequence currentSq=new Primes();
+    private Printer printer=new PrinterDummy();
 
     class ComboItem {
         Sequence sq;
@@ -56,6 +60,9 @@ public class MainFrame extends JFrame {
         DefaultComboBoxModel comboModel=new DefaultComboBoxModel(sqList.toArray());
         comboBox1.setModel(comboModel);
 
+        textField1.setText("Input value");
+        textField1.setSize(60,40);
+
         buttonQuit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -80,6 +87,28 @@ public class MainFrame extends JFrame {
                 actionReset();
             }
         });
+        showElementsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                actionShowElements();
+            }
+        });
+        changeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                actionChangeMax();
+            }
+        });
+    }
+
+    private void actionChangeMax(){
+
+    }
+
+    private void actionShowElements(){
+        TextArea tArea=new TextArea();
+        tArea.setText(printer.print(currentSq));
+        tArea.setVisible(true);
     }
 
     private void actionReset(){
